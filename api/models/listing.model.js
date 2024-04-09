@@ -1,65 +1,65 @@
 // import timespan from "jsonwebtoken/lib/timespan";
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const listingSchema = new mongoose.Schema(
     {
-        name:{
+        name: {
             type: String,
-            required:true,
+            required: true,
         },
-        description:{
+        description: {
             type: String,
-            required:true,
+            required: true,
         },
-        address:{
+        address: {
             type: String,
-            required:true,
+            required: true,
         },
-        regularPrice:{
+        regularPrice: {
             type: Number,
-            required:true,
+            required: true,
         },
-        discountPrice:{
+        discountPrice: {
             type: Number,
-            required:true,
+            required: true,
         },
-        bathrooms:{
+        bathrooms: {
             type: Number,
-            required:true,
+            required: true,
         },
-        bedrooms:{
+        bedrooms: {
             type: Number,
-            required:true,
+            required: true,
         },
-        furnised:{
+        furnished: {
             type: Boolean,
-            required:true,
+            required: true,
         },
-        parking:{
+        parking: {
             type: Boolean,
-            required:true,
+            required: true,
         },
-        type:{
+        type: {
             type: String,
-            required:true,
+            required: true,
         },
-        offer:{
+        offer: {
             type: Boolean,
-            required:true,
+            required: true,
         },
-        imageUrls:{
+        imageUrls: {
             type: Array,
-            required:true,
+            required: true,
         },
-        userRef:{
+        userRef: {
             type: String,
-            required:true,
+            required: true,
         },
-    },{timestamps:true}
-)
+    },
+    { timestamps: true }
+);
 
-const Listing = mongoose.model('Listing',listingSchema);
+const Listing = mongoose.model('Listing', listingSchema);
 
 export default Listing;
-
 
