@@ -5,6 +5,7 @@ import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
 import listingRouter from './routes/listing.route.js';
 import cookieParser from 'cookie-parser';
+// import cors from "cors";
 
 dotenv.config();
 
@@ -14,7 +15,10 @@ mongoose.connect(process.env.DATABASE_URI).then(() =>{
     console.log(err);
 });
 
+
 const app=express();
+
+// app.use(cors())
 
 app.use(express.json());
 
@@ -24,9 +28,9 @@ app.listen(8000, ()=>{
     console.log("Server is running!! ");
 });
 
-// app.get('/',(req, res)=>{
-//     res.send("Hi I am saurabh kumar!");
-// });
+app.get('/',(req, res)=>{
+    res.send("Hi I am saurabh kumar!");
+});
 
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
